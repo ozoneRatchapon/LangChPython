@@ -16,7 +16,8 @@ def  get_document_from_web(url):
     return docs
 
 #print(get_document_from_web("https://python.langchain.com/v0.1/docs/expression_language/"))
-docs = get_document_from_web("https://python.langchain.com/v0.1/docs/expression_language/")
+# docs = get_document_from_web("https://python.langchain.com/v0.1/docs/expression_language/")
+docs = get_document_from_web("https://graduate.mahidol.ac.th/inter/")
 
 
 # Initialize the ChatGroq object
@@ -40,7 +41,8 @@ chain = create_stuff_documents_chain(
     )
 
 response = chain.invoke({
-    'input':"What is LCEL",
+    # 'input':"What is the expression language?",
+    'input':"how to apply for the graduate program?",
     'context': docs
 })
 print(response)
