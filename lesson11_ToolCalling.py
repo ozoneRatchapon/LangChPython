@@ -8,8 +8,8 @@ llm = ChatGroq(
     temperature=0,
 )
 
-response = llm.invoke("Write a poem about AI")
-print(response)
+# response = llm.invoke("Write a poem about AI")
+# print(response)
 
 #==========================================================
 
@@ -30,12 +30,12 @@ tools = [add, multiply]
 llm_with_tools = llm.bind_tools(tools)
 #==========================================================
 from langchain_core.messages import HumanMessage  
-query = "What is 3 * 12? and what is 3 + 2"
+query = "What is 44 * 12? and what is 5 + 2"
 messages = [HumanMessage(query)]
 ai_msg = llm_with_tools.invoke(messages)
-print(ai_msg)
+# print(ai_msg)
 messages.append(ai_msg) # Add the AI response to the messages list
-print(ai_msg.tool_calls)
+# print(ai_msg.tool_calls)
 
 #==========================================================
 for tool_call in ai_msg.tool_calls:
