@@ -15,7 +15,7 @@ from langchain_core.prompts import ChatPromptTemplate
 
 # Step 1: Initialize the ChatGroq LLM
 llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
+    model="mixtral-8x7b-32768",
     temperature=0
 )
 
@@ -29,7 +29,7 @@ prompt = ChatPromptTemplate.from_messages([
 chain = prompt | llm
 
 # Step 4: Invoke the Chain with the topic "Innovation"
-response = chain.invoke({"topic": "Innovation"})
+response = chain.invoke({"topic" : "Innovation"})
 
 # Step 5: Print the Generated Response
 print(response.content)
