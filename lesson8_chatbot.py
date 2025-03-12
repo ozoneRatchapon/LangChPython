@@ -10,6 +10,7 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from langchain_community.vectorstores.faiss import FAISS
 from langchain.chains import create_retrieval_chain
+from langchain_together import TogetherEmbeddings
 
 from langchain_core.messages import HumanMessage, AIMessage
 from langchain_core.prompts import MessagesPlaceholder
@@ -30,7 +31,10 @@ def  get_document_from_web(url):
     return splitDocs
 
 def create_db(docs):
-    embedding = OpenAIEmbeddings()
+    # embedding = OpenAIEmbeddings()
+    embedding = TogetherEmbeddings(
+        model="togethercomputer/m2-bert-80M-8k-retrieval",
+    )
     vectorStore = FAISS.from_documents(docs, embedding = embedding) 
     return vectorStore
 
@@ -78,7 +82,7 @@ if __name__ == "__main__":
     chat_history = [
         HumanMessage(content="hello"),
         AIMessage(content="Hi, how can I help you?"),
-        HumanMessage(content="My name is AKE")
+        HumanMessage(content="My name is Ozone")
     ]
 
     while True:
