@@ -1,3 +1,6 @@
+# langchain-groq
+# python-dotenv
+
 aiohappyeyeballs==2.4.3
 aiohttp==3.10.8
 aiosignal==1.3.1
@@ -32,11 +35,11 @@ idna==3.10
 jiter==0.5.0
 jsonpatch==1.33
 jsonpointer==3.0.0
-langchain==0.3.1
-langchain-community==0.3.1
-langchain-core==0.3.40
+langchain
+langchain-community
+langchain-core
 langchain-google-genai==2.0.0
-langchain-groq==0.2.0
+langchain-groq
 langchain-ollama==0.2.0
 langchain-openai==0.3.7
 langchain-text-splitters==0.3.0
